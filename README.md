@@ -6,6 +6,8 @@ This projet is a React UI components library designed to used in the Coopengo ec
 
 The component set is built specifically for React development. This ensures zero dependencies and all the components are fully optimized for React.
 
+There's a dedicated documentation available at https://DominiqueBertrand.github.io/coog-components-library/.
+
 Coog React component library using:
 
 - [Rollup](https://github.com/rollup/rollup)
