@@ -1,14 +1,15 @@
 {
-  "private": true,
+  "private": false,
   "name": "@coog/components-library",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "module": "dist/index.esm.js",
   "files": [
-    "build"
+    "dist",
+    "src"
   ],
-  "types": "dist/index.d.ts",
-  "description": "This project is a React UI component library designed for use in the Coopengo ecosystem.",
+  "description": "This project is a React UI components library designed for use in the Coopengo ecosystem.",
   "scripts": {
     "prebuild": "yarn clean && yarn lint",
     "build": "rollup --c build/rollup.config.js",
@@ -99,5 +100,8 @@
     "react-google-places-autocomplete": "^3.3.0",
     "react-markdown": "^6.0.2",
     "react-select-country-list": "^2.2.3"
+  },
+  "directories": {
+    "doc": "doc"
   }
 }

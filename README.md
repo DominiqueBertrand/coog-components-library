@@ -2,7 +2,7 @@
 
 [![License: GNU](https://img.shields.io/badge/License-GNU-green.svg)](https://opensource.org/licenses/GNU)
 
-This projet is a React UI component libraries designed to used in the Coopengo ecosystem.
+This projet is a React UI components library designed to used in the Coopengo ecosystem.
 
 The component set is built specifically for React development. This ensures zero dependencies and all the components are fully optimized for React.
 

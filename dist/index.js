@@ -11,14 +11,20 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
 
+var freeGlobal$1 = freeGlobal;
+
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
 
 /** Used as a reference to the global object. */
-var root$1 = freeGlobal || freeSelf || Function('return this')();
+var root$1 = freeGlobal$1 || freeSelf || Function('return this')();
+
+var root$2 = root$1;
 
 /** Built-in value references. */
-var Symbol$1 = root$1.Symbol;
+var Symbol$1 = root$2.Symbol;
+
+var Symbol$2 = Symbol$1;
 
 /** Used for built-in method references. */
 var objectProto$b = Object.prototype;
@@ -34,7 +40,7 @@ var hasOwnProperty$b = objectProto$b.hasOwnProperty;
 var nativeObjectToString$1 = objectProto$b.toString;
 
 /** Built-in value references. */
-var symToStringTag$1 = Symbol$1 ? Symbol$1.toStringTag : undefined;
+var symToStringTag$1 = Symbol$2 ? Symbol$2.toStringTag : undefined;
 
 /**
  * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
@@ -89,7 +95,7 @@ var nullTag = '[object Null]',
     undefinedTag = '[object Undefined]';
 
 /** Built-in value references. */
-var symToStringTag = Symbol$1 ? Symbol$1.toStringTag : undefined;
+var symToStringTag = Symbol$2 ? Symbol$2.toStringTag : undefined;
 
 /**
  * The base implementation of `getTag` without fallbacks for buggy environments.
@@ -205,11 +211,13 @@ function arrayMap(array, iteratee) {
  */
 var isArray$1 = Array.isArray;
 
+var isArray$2 = isArray$1;
+
 /** Used as references for various `Number` constants. */
 var INFINITY$1 = 1 / 0;
 
 /** Used to convert symbols to primitives and strings. */
-var symbolProto$1 = Symbol$1 ? Symbol$1.prototype : undefined,
+var symbolProto$1 = Symbol$2 ? Symbol$2.prototype : undefined,
     symbolToString = symbolProto$1 ? symbolProto$1.toString : undefined;
 
 /**
@@ -225,7 +233,7 @@ function baseToString(value) {
   if (typeof value == 'string') {
     return value;
   }
-  if (isArray$1(value)) {
+  if (isArray$2(value)) {
     // Recursively convert values (susceptible to call stack limits).
     return arrayMap(value, baseToString) + '';
   }
@@ -320,11 +328,13 @@ function isFunction(value) {
 }
 
 /** Used to detect overreaching core-js shims. */
-var coreJsData = root$1['__core-js_shared__'];
+var coreJsData = root$2['__core-js_shared__'];
+
+var coreJsData$1 = coreJsData;
 
 /** Used to detect methods masquerading as native. */
 var maskSrcKey = (function() {
-  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+  var uid = /[^.]+$/.exec(coreJsData$1 && coreJsData$1.keys && coreJsData$1.keys.IE_PROTO || '');
   return uid ? ('Symbol(src)_1.' + uid) : '';
 }());
 
@@ -431,7 +441,9 @@ function getNative(object, key) {
 }
 
 /* Built-in method references that are verified to be native. */
-var WeakMap = getNative(root$1, 'WeakMap');
+var WeakMap = getNative(root$2, 'WeakMap');
+
+var WeakMap$1 = WeakMap;
 
 /** Used as references for various `Number` constants. */
 var MAX_SAFE_INTEGER$1 = 9007199254740991;
@@ -638,6 +650,8 @@ var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsAr
     !propertyIsEnumerable$1.call(value, 'callee');
 };
 
+var isArguments$1 = isArguments;
+
 /**
  * This method returns `false`.
  *
@@ -665,7 +679,7 @@ var freeModule$1 = freeExports$1 && typeof module == 'object' && module && !modu
 var moduleExports$1 = freeModule$1 && freeModule$1.exports === freeExports$1;
 
 /** Built-in value references. */
-var Buffer = moduleExports$1 ? root$1.Buffer : undefined;
+var Buffer = moduleExports$1 ? root$2.Buffer : undefined;
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
@@ -688,6 +702,8 @@ var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
  * // => false
  */
 var isBuffer$1 = nativeIsBuffer || stubFalse;
+
+var isBuffer$2 = isBuffer$1;
 
 /** `Object#toString` result references. */
 var argsTag$1 = '[object Arguments]',
@@ -767,7 +783,7 @@ var freeModule = freeExports && typeof module == 'object' && module && !module.n
 var moduleExports = freeModule && freeModule.exports === freeExports;
 
 /** Detect free variable `process` from Node.js. */
-var freeProcess = moduleExports && freeGlobal.process;
+var freeProcess = moduleExports && freeGlobal$1.process;
 
 /** Used to access faster Node.js helpers. */
 var nodeUtil = (function() {
@@ -784,8 +800,10 @@ var nodeUtil = (function() {
   } catch (e) {}
 }());
 
+var nodeUtil$1 = nodeUtil;
+
 /* Node.js helper references. */
-var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
+var nodeIsTypedArray = nodeUtil$1 && nodeUtil$1.isTypedArray;
 
 /**
  * Checks if `value` is classified as a typed array.
@@ -806,6 +824,8 @@ var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
  */
 var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
 
+var isTypedArray$1 = isTypedArray;
+
 /** Used for built-in method references. */
 var objectProto$6 = Object.prototype;
 
@@ -821,10 +841,10 @@ var hasOwnProperty$8 = objectProto$6.hasOwnProperty;
  * @returns {Array} Returns the array of property names.
  */
 function arrayLikeKeys(value, inherited) {
-  var isArr = isArray$1(value),
-      isArg = !isArr && isArguments(value),
-      isBuff = !isArr && !isArg && isBuffer$1(value),
-      isType = !isArr && !isArg && !isBuff && isTypedArray(value),
+  var isArr = isArray$2(value),
+      isArg = !isArr && isArguments$1(value),
+      isBuff = !isArr && !isArg && isBuffer$2(value),
+      isType = !isArr && !isArg && !isBuff && isTypedArray$1(value),
       skipIndexes = isArr || isArg || isBuff || isType,
       result = skipIndexes ? baseTimes(value.length, String) : [],
       length = result.length;
@@ -864,6 +884,8 @@ function overArg(func, transform) {
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeKeys = overArg(Object.keys, Object);
 
+var nativeKeys$1 = nativeKeys;
+
 /** Used for built-in method references. */
 var objectProto$5 = Object.prototype;
 
@@ -879,7 +901,7 @@ var hasOwnProperty$7 = objectProto$5.hasOwnProperty;
  */
 function baseKeys(object) {
   if (!isPrototype(object)) {
-    return nativeKeys(object);
+    return nativeKeys$1(object);
   }
   var result = [];
   for (var key in Object(object)) {
@@ -935,7 +957,7 @@ var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
  * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
  */
 function isKey(value, object) {
-  if (isArray$1(value)) {
+  if (isArray$2(value)) {
     return false;
   }
   var type = typeof value;
@@ -950,6 +972,8 @@ function isKey(value, object) {
 /* Built-in method references that are verified to be native. */
 var nativeCreate = getNative(Object, 'create');
 
+var nativeCreate$1 = nativeCreate;
+
 /**
  * Removes all key-value entries from the hash.
  *
@@ -958,7 +982,7 @@ var nativeCreate = getNative(Object, 'create');
  * @memberOf Hash
  */
 function hashClear() {
-  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+  this.__data__ = nativeCreate$1 ? nativeCreate$1(null) : {};
   this.size = 0;
 }
 
@@ -998,7 +1022,7 @@ var hasOwnProperty$6 = objectProto$4.hasOwnProperty;
  */
 function hashGet(key) {
   var data = this.__data__;
-  if (nativeCreate) {
+  if (nativeCreate$1) {
     var result = data[key];
     return result === HASH_UNDEFINED$2 ? undefined : result;
   }
@@ -1022,7 +1046,7 @@ var hasOwnProperty$5 = objectProto$3.hasOwnProperty;
  */
 function hashHas(key) {
   var data = this.__data__;
-  return nativeCreate ? (data[key] !== undefined) : hasOwnProperty$5.call(data, key);
+  return nativeCreate$1 ? (data[key] !== undefined) : hasOwnProperty$5.call(data, key);
 }
 
 /** Used to stand-in for `undefined` hash values. */
@@ -1041,7 +1065,7 @@ var HASH_UNDEFINED$1 = '__lodash_hash_undefined__';
 function hashSet(key, value) {
   var data = this.__data__;
   this.size += this.has(key) ? 0 : 1;
-  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED$1 : value;
+  data[key] = (nativeCreate$1 && value === undefined) ? HASH_UNDEFINED$1 : value;
   return this;
 }
 
@@ -1104,7 +1128,7 @@ function assocIndexOf(array, key) {
 var arrayProto = Array.prototype;
 
 /** Built-in value references. */
-var splice$2 = arrayProto.splice;
+var splice$1 = arrayProto.splice;
 
 /**
  * Removes `key` and its value from the list cache.
@@ -1126,7 +1150,7 @@ function listCacheDelete(key) {
   if (index == lastIndex) {
     data.pop();
   } else {
-    splice$2.call(data, index, 1);
+    splice$1.call(data, index, 1);
   }
   --this.size;
   return true;
@@ -1210,7 +1234,9 @@ ListCache.prototype.has = listCacheHas;
 ListCache.prototype.set = listCacheSet;
 
 /* Built-in method references that are verified to be native. */
-var Map = getNative(root$1, 'Map');
+var Map = getNative(root$2, 'Map');
+
+var Map$1 = Map;
 
 /**
  * Removes all key-value entries from the map.
@@ -1223,7 +1249,7 @@ function mapCacheClear() {
   this.size = 0;
   this.__data__ = {
     'hash': new Hash,
-    'map': new (Map || ListCache),
+    'map': new (Map$1 || ListCache),
     'string': new Hash
   };
 }
@@ -1459,6 +1485,8 @@ var stringToPath = memoizeCapped(function(string) {
   return result;
 });
 
+var stringToPath$1 = stringToPath;
+
 /**
  * Converts `value` to a string. An empty string is returned for `null`
  * and `undefined` values. The sign of `-0` is preserved.
@@ -1493,10 +1521,10 @@ function toString$2(value) {
  * @returns {Array} Returns the cast property path array.
  */
 function castPath(value, object) {
-  if (isArray$1(value)) {
+  if (isArray$2(value)) {
     return value;
   }
-  return isKey(value, object) ? [value] : stringToPath(toString$2(value));
+  return isKey(value, object) ? [value] : stringToPath$1(toString$2(value));
 }
 
 /** Used as references for various `Number` constants. */
@@ -1765,6 +1793,8 @@ function createCaseFirst(methodName) {
  */
 var upperFirst = createCaseFirst('toUpperCase');
 
+var upperFirst$1 = upperFirst;
+
 /**
  * A specialized version of `_.reduce` for arrays without support for
  * iteratee shorthands.
@@ -1871,6 +1901,8 @@ var deburredLetters = {
  */
 var deburrLetter = basePropertyOf(deburredLetters);
 
+var deburrLetter$1 = deburrLetter;
+
 /** Used to match Latin Unicode letters (excluding mathematical operators). */
 var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
 
@@ -1909,7 +1941,7 @@ var reComboMark = RegExp(rsCombo$1, 'g');
  */
 function deburr(string) {
   string = toString$2(string);
-  return string && string.replace(reLatin, deburrLetter).replace(reComboMark, '');
+  return string && string.replace(reLatin, deburrLetter$1).replace(reComboMark, '');
 }
 
 /** Used to match words composed of alphanumeric characters. */
@@ -2128,7 +2160,7 @@ function stackSet(key, value) {
   var data = this.__data__;
   if (data instanceof ListCache) {
     var pairs = data.__data__;
-    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
+    if (!Map$1 || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
       pairs.push([key, value]);
       this.size = ++data.size;
       return this;
@@ -2231,6 +2263,8 @@ var getSymbols = !nativeGetSymbols ? stubArray : function(object) {
   });
 };
 
+var getSymbols$1 = getSymbols;
+
 /**
  * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
  * `keysFunc` and `symbolsFunc` to get the enumerable property names and
@@ -2244,7 +2278,7 @@ var getSymbols = !nativeGetSymbols ? stubArray : function(object) {
  */
 function baseGetAllKeys(object, keysFunc, symbolsFunc) {
   var result = keysFunc(object);
-  return isArray$1(object) ? result : arrayPush(result, symbolsFunc(object));
+  return isArray$2(object) ? result : arrayPush(result, symbolsFunc(object));
 }
 
 /**
@@ -2255,17 +2289,23 @@ function baseGetAllKeys(object, keysFunc, symbolsFunc) {
  * @returns {Array} Returns the array of property names and symbols.
  */
 function getAllKeys(object) {
-  return baseGetAllKeys(object, keys$1, getSymbols);
+  return baseGetAllKeys(object, keys$1, getSymbols$1);
 }
 
 /* Built-in method references that are verified to be native. */
-var DataView = getNative(root$1, 'DataView');
+var DataView = getNative(root$2, 'DataView');
+
+var DataView$1 = DataView;
 
 /* Built-in method references that are verified to be native. */
-var Promise$1 = getNative(root$1, 'Promise');
+var Promise$1 = getNative(root$2, 'Promise');
+
+var Promise$2 = Promise$1;
 
 /* Built-in method references that are verified to be native. */
-var Set$1 = getNative(root$1, 'Set');
+var Set$1 = getNative(root$2, 'Set');
+
+var Set$2 = Set$1;
 
 /** `Object#toString` result references. */
 var mapTag$1 = '[object Map]',
@@ -2277,11 +2317,11 @@ var mapTag$1 = '[object Map]',
 var dataViewTag$1 = '[object DataView]';
 
 /** Used to detect maps, sets, and weakmaps. */
-var dataViewCtorString = toSource(DataView),
-    mapCtorString = toSource(Map),
-    promiseCtorString = toSource(Promise$1),
-    setCtorString = toSource(Set$1),
-    weakMapCtorString = toSource(WeakMap);
+var dataViewCtorString = toSource(DataView$1),
+    mapCtorString = toSource(Map$1),
+    promiseCtorString = toSource(Promise$2),
+    setCtorString = toSource(Set$2),
+    weakMapCtorString = toSource(WeakMap$1);
 
 /**
  * Gets the `toStringTag` of `value`.
@@ -2293,11 +2333,11 @@ var dataViewCtorString = toSource(DataView),
 var getTag = baseGetTag;
 
 // Fallback for data views, maps, sets, and weak maps in IE 11 and promises in Node.js < 6.
-if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag$1) ||
-    (Map && getTag(new Map) != mapTag$1) ||
-    (Promise$1 && getTag(Promise$1.resolve()) != promiseTag) ||
-    (Set$1 && getTag(new Set$1) != setTag$1) ||
-    (WeakMap && getTag(new WeakMap) != weakMapTag)) {
+if ((DataView$1 && getTag(new DataView$1(new ArrayBuffer(1))) != dataViewTag$1) ||
+    (Map$1 && getTag(new Map$1) != mapTag$1) ||
+    (Promise$2 && getTag(Promise$2.resolve()) != promiseTag) ||
+    (Set$2 && getTag(new Set$2) != setTag$1) ||
+    (WeakMap$1 && getTag(new WeakMap$1) != weakMapTag)) {
   getTag = function(value) {
     var result = baseGetTag(value),
         Ctor = result == objectTag$1 ? value.constructor : undefined,
@@ -2319,7 +2359,9 @@ if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag$1) ||
 var getTag$1 = getTag;
 
 /** Built-in value references. */
-var Uint8Array = root$1.Uint8Array;
+var Uint8Array = root$2.Uint8Array;
+
+var Uint8Array$1 = Uint8Array;
 
 /** Used to stand-in for `undefined` hash values. */
 var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -2540,7 +2582,7 @@ var arrayBufferTag = '[object ArrayBuffer]',
     dataViewTag = '[object DataView]';
 
 /** Used to convert symbols to primitives and strings. */
-var symbolProto = Symbol$1 ? Symbol$1.prototype : undefined,
+var symbolProto = Symbol$2 ? Symbol$2.prototype : undefined,
     symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
 
 /**
@@ -2572,7 +2614,7 @@ function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
 
     case arrayBufferTag:
       if ((object.byteLength != other.byteLength) ||
-          !equalFunc(new Uint8Array(object), new Uint8Array(other))) {
+          !equalFunc(new Uint8Array$1(object), new Uint8Array$1(other))) {
         return false;
       }
       return true;
@@ -2741,8 +2783,8 @@ var hasOwnProperty$3 = objectProto.hasOwnProperty;
  * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
  */
 function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
-  var objIsArr = isArray$1(object),
-      othIsArr = isArray$1(other),
+  var objIsArr = isArray$2(object),
+      othIsArr = isArray$2(other),
       objTag = objIsArr ? arrayTag : getTag$1(object),
       othTag = othIsArr ? arrayTag : getTag$1(other);
 
@@ -2753,8 +2795,8 @@ function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
       othIsObj = othTag == objectTag,
       isSameTag = objTag == othTag;
 
-  if (isSameTag && isBuffer$1(object)) {
-    if (!isBuffer$1(other)) {
+  if (isSameTag && isBuffer$2(object)) {
+    if (!isBuffer$2(other)) {
       return false;
     }
     objIsArr = true;
@@ -2762,7 +2804,7 @@ function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
   }
   if (isSameTag && !objIsObj) {
     stack || (stack = new Stack);
-    return (objIsArr || isTypedArray(object))
+    return (objIsArr || isTypedArray$1(object))
       ? equalArrays(object, other, bitmask, customizer, equalFunc, stack)
       : equalByTag(object, other, objTag, bitmask, customizer, equalFunc, stack);
   }
@@ -2975,7 +3017,7 @@ function hasPath(object, path, hasFunc) {
   }
   length = object == null ? 0 : object.length;
   return !!length && isLength(length) && isIndex(key, length) &&
-    (isArray$1(object) || isArguments(object));
+    (isArray$2(object) || isArguments$1(object));
 }
 
 /**
@@ -3101,7 +3143,7 @@ function baseIteratee(value) {
     return identity$1;
   }
   if (typeof value == 'object') {
-    return isArray$1(value)
+    return isArray$2(value)
       ? baseMatchesProperty(value[0], value[1])
       : baseMatches(value);
   }
@@ -3145,6 +3187,8 @@ function createBaseFor(fromRight) {
  */
 var baseFor = createBaseFor();
 
+var baseFor$1 = baseFor;
+
 /**
  * The base implementation of `_.forOwn` without support for iteratee shorthands.
  *
@@ -3154,7 +3198,7 @@ var baseFor = createBaseFor();
  * @returns {Object} Returns `object`.
  */
 function baseForOwn(object, iteratee) {
-  return object && baseFor(object, iteratee, keys$1);
+  return object && baseFor$1(object, iteratee, keys$1);
 }
 
 /**
@@ -3196,6 +3240,8 @@ function createBaseEach(eachFunc, fromRight) {
  */
 var baseEach = createBaseEach(baseForOwn);
 
+var baseEach$1 = baseEach;
+
 /**
  * The base implementation of `_.map` without support for iteratee shorthands.
  *
@@ -3208,7 +3254,7 @@ function baseMap(collection, iteratee) {
   var index = -1,
       result = isArrayLike(collection) ? Array(collection.length) : [];
 
-  baseEach(collection, function(value, key, collection) {
+  baseEach$1(collection, function(value, key, collection) {
     result[++index] = iteratee(value, key, collection);
   });
   return result;
@@ -3257,7 +3303,7 @@ function baseMap(collection, iteratee) {
  * // => ['barney', 'fred']
  */
 function map(collection, iteratee) {
-  var func = isArray$1(collection) ? arrayMap : baseMap;
+  var func = isArray$2(collection) ? arrayMap : baseMap;
   return func(collection, baseIteratee(iteratee));
 }
 
@@ -3283,8 +3329,10 @@ function map(collection, iteratee) {
  * // => 'FOO BAR'
  */
 var startCase = createCompounder(function(result, word, index) {
-  return result + (index ? ' ' : '') + upperFirst(word);
+  return result + (index ? ' ' : '') + upperFirst$1(word);
 });
+
+var startCase$1 = startCase;
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -3294,7 +3342,7 @@ function createCommonjsModule(fn) {
 }
 
 /*!
- * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 
@@ -3496,7 +3544,7 @@ var fontawesomeSvgCore = createCommonjsModule(function (module, exports) {
     'kit': 'fak'
   };
   var LAYERS_TEXT_CLASSNAME = 'fa-layers-text';
-  var FONT_FAMILY_PATTERN = /Font Awesome ([5 ]*)(Solid|Regular|Light|Duotone|Brands|Free|Pro|Kit).*/; // TODO: do we need to handle font-weight for kit SVG pseudo-elements?
+  var FONT_FAMILY_PATTERN = /Font Awesome ([5 ]*)(Solid|Regular|Light|Duotone|Brands|Free|Pro|Kit).*/i; // TODO: do we need to handle font-weight for kit SVG pseudo-elements?
 
   var FONT_WEIGHT_TO_PREFIX = {
     '900': 'fas',
@@ -4396,7 +4444,7 @@ var fontawesomeSvgCore = createCommonjsModule(function (module, exports) {
     mark: noop$1,
     measure: noop$1
   };
-  var preamble = "FA \"5.15.3\"";
+  var preamble = "FA \"5.15.4\"";
 
   var begin = function begin(name) {
     p.mark("".concat(preamble, " ").concat(name, " begins"));
@@ -7125,6 +7173,12 @@ var reactFontawesome = createCommonjsModule(function (module, exports) {
   }
 
   function normalizeIconArgs(icon) {
+    // this has everything that it needs to be rendered which means it was probably imported
+    // directly from an icon svg package
+    if (icon && _typeof(icon) === 'object' && icon.prefix && icon.iconName && icon.icon) {
+      return icon;
+    }
+
     if (fontawesomeSvgCore.parse.icon) {
       return fontawesomeSvgCore.parse.icon(icon);
     } // if the icon is null, there's nothing to do
@@ -7135,7 +7189,7 @@ var reactFontawesome = createCommonjsModule(function (module, exports) {
     } // if the icon is an object and has a prefix and an icon name, return it
 
 
-    if (_typeof(icon) === 'object' && icon.prefix && icon.iconName) {
+    if (icon && _typeof(icon) === 'object' && icon.prefix && icon.iconName) {
       return icon;
     } // if it's an array with length of two
 
@@ -7254,7 +7308,7 @@ var reactFontawesome = createCommonjsModule(function (module, exports) {
 });
 
 /*!
- * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 
@@ -14423,7 +14477,7 @@ var SRHeader = function (_a) {
      * return icon
      * @param {string} icon
      */
-    var icon = status ? freeSolidSvgIcons.fas["fa" + startCase(status).replace(/ /g, '')] : null;
+    var icon = status ? freeSolidSvgIcons.fas["fa" + startCase$1(status).replace(/ /g, '')] : null;
     return (React__default['default'].createElement("div", { "data-testid": "SRHeader", className: "sr-header" },
         React__default['default'].createElement("div", { className: "grid-item left" },
             React__default['default'].createElement("h1", { className: "md-title md-cell md-cell--12 " + status }, title),
@@ -15489,6 +15543,10 @@ function pipelineStringify(p, ctx) {
   var result = p.stringify(ctx.tree, ctx.file);
 
   if (result === undefined || result === null) ; else if (typeof result === 'string' || isBuffer(result)) {
+    if ('value' in ctx.file) {
+      ctx.file.value = result;
+    }
+
     ctx.file.contents = result;
   } else {
     ctx.file.result = result;
@@ -16355,9 +16413,9 @@ function prefixSize(events, type) {
 
 var prefixSize_1 = prefixSize;
 
-var splice$1 = [].splice;
+var splice = [].splice;
 
-var splice_1 = splice$1;
+var splice_1 = splice;
 
 // causes a stack overflow in V8 when trying to insert 100k items for instance.
 
@@ -22106,6 +22164,8 @@ function normalise(identifier) {
   return identifier.toUpperCase()
 }
 
+var one$1 = one_1;
+
 var all_1 = all;
 
 
@@ -22119,7 +22179,7 @@ function all(h, parent) {
   var head;
 
   while (++index < length) {
-    result = one_1(h, nodes[index], parent);
+    result = one$1(h, nodes[index], parent);
 
     if (result) {
       if (index && nodes[index - 1].type === 'break') {
@@ -23011,7 +23071,7 @@ function factory(tree, options) {
 // Transform `tree`, which is an mdast node, to a hast node.
 function toHast(tree, options) {
   var h = factory(tree, options);
-  var node = one_1(h, tree);
+  var node = one$1(h, tree);
   var foot = footer(h);
 
   if (foot) {
@@ -23671,11 +23731,10 @@ var html = create_1({
 
 var html_1 = merge_1([xml, xlink, xmlns, aria, html]);
 
-const splice = [].splice;
-
 var rehypeFilter_1 = rehypeFilter;
 
 /**
+ * @typedef {import('unist').Node} Node
  * @typedef {import('hast').Root} Root
  * @typedef {import('hast').Element} Element
  *
@@ -23683,9 +23742,9 @@ var rehypeFilter_1 = rehypeFilter;
  * @param {Element} element
  * @param {number} index
  * @param {Element|Root} parent
- * @returns {boolean}
+ * @returns {boolean|undefined}
  *
- * @typedef {Object} RehypeFilterOptions
+ * @typedef RehypeFilterOptions
  * @property {Array.<string>} [allowedElements]
  * @property {Array.<string>} [disallowedElements=[]]
  * @property {AllowElement} [allowElement]
@@ -23693,7 +23752,7 @@ var rehypeFilter_1 = rehypeFilter;
  */
 
 /**
- * @param {RehypeFilterOptions} options
+ * @type {import('unified').Plugin<[RehypeFilterOptions]>}
  */
 function rehypeFilter(options) {
   if (options.allowedElements && options.disallowedElements) {
@@ -23702,27 +23761,27 @@ function rehypeFilter(options) {
     )
   }
 
-  return options.allowedElements ||
+  if (
+    options.allowedElements ||
     options.disallowedElements ||
     options.allowElement
-    ? transform
-    : undefined
-
-  /**
-   * @param {Root} tree
-   */
-  function transform(tree) {
-    unistUtilVisit(tree, 'element', onelement);
+  ) {
+    return (tree) => {
+      const node = /** @type {Root} */ (tree);
+      unistUtilVisit(node, 'element', onelement);
+    }
   }
 
   /**
-   * @param {Element} node
-   * @param {number} index
-   * @param {Element|Root} parent
+   * @param {Node} node_
+   * @param {number|null|undefined} index
+   * @param {Node|null|undefined} parent_
    * @returns {number|void}
    */
-  function onelement(node, index, parent) {
-    /** @type {boolean} */
+  function onelement(node_, index, parent_) {
+    const node = /** @type {Element} */ (node_);
+    const parent = /** @type {Element|Root} */ (parent_);
+    /** @type {boolean|undefined} */
     let remove;
 
     if (options.allowedElements) {
@@ -23731,19 +23790,17 @@ function rehypeFilter(options) {
       remove = options.disallowedElements.includes(node.tagName);
     }
 
-    if (!remove && options.allowElement) {
+    if (!remove && options.allowElement && typeof index === 'number') {
       remove = !options.allowElement(node, index, parent);
     }
 
-    if (remove) {
-      /** @type {Array.<unknown>} */
-      let parameters = [index, 1];
-
+    if (remove && typeof index === 'number') {
       if (options.unwrapDisallowed && node.children) {
-        parameters = parameters.concat(node.children);
+        parent.children.splice(index, 1, ...node.children);
+      } else {
+        parent.children.splice(index, 1);
       }
 
-      splice.apply(parent.children, parameters);
       return index
     }
 
@@ -25113,18 +25170,6 @@ function StyleToObject(style, iterator) {
 
 var styleToObject = StyleToObject;
 
-// @ts-ignore remove when typed
-
-// @ts-ignore remove when typed
-
-// @ts-ignore remove when typed
-
-// @ts-ignore remove when typed
-
-// @ts-ignore remove when typed
-
-
-
 var hastToReact_1 = toReact;
 var hastChildrenToReact = childrenToReact$1;
 
@@ -25140,7 +25185,7 @@ var hastChildrenToReact = childrenToReact$1;
  */
 
 /**
- * @typedef {Object} Info
+ * @typedef Info
  * @property {string?} space
  * @property {string?} attribute
  * @property {string?} property
@@ -25154,16 +25199,16 @@ var hastChildrenToReact = childrenToReact$1;
  * @property {boolean} mustUseProperty
  * @property {boolean} defined
  *
- * @typedef {Object} Schema
+ * @typedef Schema
  * @property {Object.<string, Info>} property
  * @property {Object.<string, string>} normal
  * @property {string?} space
  *
- * @typedef {Object} Raw
+ * @typedef Raw
  * @property {'raw'} type
  * @property {string} value
  *
- * @typedef {Object} Context
+ * @typedef Context
  * @property {TransformOptions} options
  * @property {Schema} schema
  * @property {number} listDepth
@@ -25184,15 +25229,13 @@ var hastChildrenToReact = childrenToReact$1;
  * @param {string} href
  * @param {Array.<Comment|Element|Text>} children
  * @param {string?} title
- * @returns {string}
+ * @returns {string|undefined}
  *
  * @typedef {keyof IntrinsicElements} ReactMarkdownNames
  *
- * @typedef {{ [key: string]: unknown, className?: string }} ReactBaseProps
- *
  * To do: is `data-sourcepos` typeable?
  *
- * @typedef {Object} ReactMarkdownProps
+ * @typedef ReactMarkdownProps
  * @property {Element} node
  * @property {string} key
  * @property {ReactNode[]} children
@@ -25200,39 +25243,35 @@ var hastChildrenToReact = childrenToReact$1;
  * @property {number} [index] Passed when `options.includeElementIndex` is given
  * @property {number} [siblingCount] Passed when `options.includeElementIndex` is given
  *
- * @callback NormalComponent
- * @param {ReactBaseProps & ReactMarkdownProps} props
- * @returns {ReactNode}
- *
  * @callback CodeComponent
- * @param {ReactBaseProps & ReactMarkdownProps & {inline?: boolean}} props
+ * @param {JSX.IntrinsicElements['code'] & ReactMarkdownProps & {inline?: boolean}} props
  * @returns {ReactNode}
  *
  * @callback HeadingComponent
- * @param {ReactBaseProps & ReactMarkdownProps & {level: number}} props
+ * @param {JSX.IntrinsicElements['h1'] & ReactMarkdownProps & {level: number}} props
  * @returns {ReactNode}
  *
  * @callback LiComponent
- * @param {ReactBaseProps & ReactMarkdownProps & {checked: boolean|null, index: number, ordered: boolean}} props
+ * @param {JSX.IntrinsicElements['li'] & ReactMarkdownProps & {checked: boolean|null, index: number, ordered: boolean}} props
  * @returns {ReactNode}
  *
  * @callback OrderedListComponent
- * @param {ReactBaseProps & ReactMarkdownProps & {depth: number, ordered: true}} props
+ * @param {JSX.IntrinsicElements['ol'] & ReactMarkdownProps & {depth: number, ordered: true}} props
  * @returns {ReactNode}
  *
  * @callback TableCellComponent
- * @param {ReactBaseProps & ReactMarkdownProps & {style?: Object.<string, unknown>, isHeader: boolean}} props
+ * @param {JSX.IntrinsicElements['table'] & ReactMarkdownProps & {style?: Object.<string, unknown>, isHeader: boolean}} props
  * @returns {ReactNode}
  *
  * @callback TableRowComponent
- * @param {ReactBaseProps & ReactMarkdownProps & {isHeader: boolean}} props
+ * @param {JSX.IntrinsicElements['tr'] & ReactMarkdownProps & {isHeader: boolean}} props
  * @returns {ReactNode}
  *
  * @callback UnorderedListComponent
- * @param {ReactBaseProps & ReactMarkdownProps & {depth: number, ordered: false}} props
+ * @param {JSX.IntrinsicElements['ul'] & ReactMarkdownProps & {depth: number, ordered: false}} props
  * @returns {ReactNode}
  *
- * @typedef {Object} SpecialComponents
+ * @typedef SpecialComponents
  * @property {CodeComponent|ReactMarkdownNames} code
  * @property {HeadingComponent|ReactMarkdownNames} h1
  * @property {HeadingComponent|ReactMarkdownNames} h2
@@ -25247,17 +25286,17 @@ var hastChildrenToReact = childrenToReact$1;
  * @property {TableRowComponent|ReactMarkdownNames} tr
  * @property {UnorderedListComponent|ReactMarkdownNames} ul
  *
- * @typedef {Record<Exclude<ReactMarkdownNames, keyof SpecialComponents>, NormalComponent|ReactMarkdownNames>} NormalComponents
- * @typedef {Partial<NormalComponents & SpecialComponents>} Components
+ * @typedef {{[TagName in keyof IntrinsicElements]: TagName | ((props: IntrinsicElements[TagName] & ReactMarkdownProps) => ReactNode)}} NormalComponents
+ * @typedef {Partial<Omit<NormalComponents, keyof SpecialComponents> & SpecialComponents>} Components
  */
 
 /**
- * @typedef {Object} TransformOptions
+ * @typedef TransformOptions
  * @property {boolean} [sourcePos=false]
  * @property {boolean} [rawSourcePos=false]
  * @property {boolean} [skipHtml=false]
  * @property {boolean} [includeElementIndex=false]
- * @property {false|TransformLink} [transformLinkUri]
+ * @property {null|false|TransformLink} [transformLinkUri]
  * @property {TransformImage} [transformImageUri]
  * @property {string|TransformLinkTarget} [linkTarget]
  * @property {Components} [components]
@@ -25296,10 +25335,10 @@ function childrenToReact$1(context, node) {
         children.push(child.value);
       }
     }
-    // @ts-ignore `raw` nodes are non-standard
+    // @ts-expect-error `raw` nodes are non-standard
     else if (child.type === 'raw' && !context.options.skipHtml) {
       // Default behavior is to show (encoded) HTML.
-      // @ts-ignore `raw` nodes are non-standard
+      // @ts-expect-error `raw` nodes are non-standard
       children.push(child.value);
     }
   }
@@ -25317,7 +25356,7 @@ function toReact(context, node, index, parent) {
   const options = context.options;
   const parentSchema = context.schema;
   /** @type {ReactMarkdownNames} */
-  // @ts-ignore assume a known HTML/SVG element.
+  // @ts-expect-error assume a known HTML/SVG element.
   const name = node.tagName;
   /** @type {Object.<string, unknown>} */
   const properties = {};
@@ -25330,10 +25369,13 @@ function toReact(context, node, index, parent) {
     context.schema = schema;
   }
 
-  for (property in node.properties) {
-    /* istanbul ignore else - prototype polution. */
-    if (own$1.call(node.properties, property)) {
-      addProperty(properties, property, node.properties[property], context);
+  /* istanbul ignore else - types say they’re optional. */
+  if (node.properties) {
+    for (property in node.properties) {
+      /* istanbul ignore else - prototype polution. */
+      if (own$1.call(node.properties, property)) {
+        addProperty(properties, property, node.properties[property], context);
+      }
     }
   }
 
@@ -25356,7 +25398,6 @@ function toReact(context, node, index, parent) {
     start: {line: null, column: null, offset: null},
     end: {line: null, column: null, offset: null}
   };
-  /** @type {NormalComponent|SpecialComponents[keyof SpecialComponents]|ReactMarkdownNames} */
   const component =
     options.components && own$1.call(options.components, name)
       ? options.components[name]
@@ -25379,21 +25420,26 @@ function toReact(context, node, index, parent) {
   if (name === 'a' && options.linkTarget) {
     properties.target =
       typeof options.linkTarget === 'function'
-        ? // @ts-ignore assume `href` is a string
+        ? // @ts-expect-error assume `href` is a string
           options.linkTarget(properties.href, node.children, properties.title)
         : options.linkTarget;
   }
 
   if (name === 'a' && options.transformLinkUri) {
     properties.href = options.transformLinkUri(
-      // @ts-ignore assume `href` is a string
+      // @ts-expect-error assume `href` is a string
       properties.href,
       node.children,
       properties.title
     );
   }
 
-  if (!basic && name === 'code' && parent.tagName !== 'pre') {
+  if (
+    !basic &&
+    name === 'code' &&
+    parent.type === 'element' &&
+    parent.tagName !== 'pre'
+  ) {
     properties.inline = true;
   }
 
@@ -25411,16 +25457,17 @@ function toReact(context, node, index, parent) {
 
   if (name === 'img' && options.transformImageUri) {
     properties.src = options.transformImageUri(
-      // @ts-ignore assume `src` is a string
+      // @ts-expect-error assume `src` is a string
       properties.src,
       properties.alt,
       properties.title
     );
   }
 
-  if (!basic && name === 'li') {
+  if (!basic && name === 'li' && parent.type === 'element') {
     const input = getInputElement(node);
-    properties.checked = input ? Boolean(input.properties.checked) : null;
+    properties.checked =
+      input && input.properties ? Boolean(input.properties.checked) : null;
     properties.index = getElementsBeforeCount(parent, node);
     properties.ordered = parent.tagName === 'ol';
   }
@@ -25433,7 +25480,7 @@ function toReact(context, node, index, parent) {
   if (name === 'td' || name === 'th') {
     if (properties.align) {
       if (!properties.style) properties.style = {};
-      // @ts-ignore assume `style` is an object
+      // @ts-expect-error assume `style` is an object
       properties.style.textAlign = properties.align;
       delete properties.align;
     }
@@ -25443,7 +25490,7 @@ function toReact(context, node, index, parent) {
     }
   }
 
-  if (!basic && name === 'tr') {
+  if (!basic && name === 'tr' && parent.type === 'element') {
     properties.isHeader = Boolean(parent.tagName === 'thead');
   }
 
@@ -25535,13 +25582,14 @@ function addProperty(props, prop, value, ctx) {
     result = parseStyle(result);
   }
 
-  if (info.space) {
+  /* istanbul ignore else - types say they’re optional. */
+  if (info.space && info.property) {
     props[
       own$1.call(hastToReact, info.property)
         ? hastToReact[info.property]
         : info.property
     ] = result;
-  } else {
+  } else if (info.attribute) {
     props[info.attribute] = result;
   }
 }
@@ -25556,7 +25604,7 @@ function parseStyle(value) {
 
   try {
     styleToObject(value, iterator);
-  } catch (/** @type {Error} */ _) {
+  } catch (/** @type {unknown} */ _) {
     // Silent.
   }
 
@@ -25581,7 +25629,7 @@ function styleReplacer(_, $1) {
 }
 
 /**
- * @param {Position} pos
+ * @param {Position|{start: {line: null, column: null, offset: null}, end: {line: null, column: null, offset: null}}} pos
  * @returns {string}
  */
 function flattenPosition(pos) {
@@ -25603,10 +25651,6 @@ var astToReact = {
 	hastChildrenToReact: hastChildrenToReact
 };
 
-// @ts-ignore remove when typed
-
-
-
 const childrenToReact = astToReact.hastChildrenToReact;
 
 /**
@@ -25617,15 +25661,15 @@ const childrenToReact = astToReact.hastChildrenToReact;
  * @typedef {import('./rehype-filter.js').RehypeFilterOptions} FilterOptions
  * @typedef {import('./ast-to-react.js').TransformOptions} TransformOptions
  *
- * @typedef {Object} CoreOptions
+ * @typedef CoreOptions
  * @property {string} children
  *
- * @typedef {Object} PluginOptions
+ * @typedef PluginOptions
  * @property {PluggableList} [plugins=[]] **deprecated**: use `remarkPlugins` instead
  * @property {PluggableList} [remarkPlugins=[]]
  * @property {PluggableList} [rehypePlugins=[]]
  *
- * @typedef {Object} LayoutOptions
+ * @typedef LayoutOptions
  * @property {string} [className]
  *
  * @typedef {CoreOptions & PluginOptions & LayoutOptions & FilterOptions & TransformOptions} ReactMarkdownOptions
@@ -25638,7 +25682,7 @@ const changelog =
   'https://github.com/remarkjs/react-markdown/blob/main/changelog.md';
 
 /**
- * @typedef {Object} Deprecation
+ * @typedef Deprecation
  * @property {string} id
  * @property {string} [to]
  */
@@ -25712,7 +25756,7 @@ function ReactMarkdown(options) {
   }
 
   /** @type {Root} */
-  // @ts-ignore we’ll throw if it isn’t a root next.
+  // @ts-expect-error we’ll throw if it isn’t a root next.
   const hastNode = processor.runSync(processor.parse(file), file);
 
   if (hastNode.type !== 'root') {

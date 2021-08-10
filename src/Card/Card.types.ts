@@ -33,7 +33,7 @@ export interface CardProps {
     titleBack?: any;                      //The title of the card, back (can be JSX/TSX, overrides title)
   
     //Color
-    theme?: Themes;                       //The global theme of the card, default 'blue'
+    theme?: 'red';                       //The global theme of the card, default 'blue'
     titleTextColor?: string;              //The color of the title text, default 'white'
     contentTextColor?: string;            //The color of the content text, default 'black'
     primaryColor?: string;                //The primary color of the card (header, border, hover color), default 'black'
