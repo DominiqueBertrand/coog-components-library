@@ -1,0 +1,26 @@
+// This file is part of Coog. The COPYRIGHT file at the top level of
+// this repository contains the full copyright notices and license terms.
+
+@import '../../../variables';
+@import '../../../typography';
+
+@mixin grid-question {
+  @include font-defaults;
+
+  display: flex;
+
+  > .question {
+    margin: 0 5px 0 0;
+    font-style: italic;
+    opacity: 0.7;
+  }
+
+  > div > .answer p {
+    font-weight: bold;
+    color: $color-theme-1;
+  }
+}
+
+.grid-question-6a9-064f417-50f4-00f8-4e7b {
+  @include grid-question;
+}

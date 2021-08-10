@@ -1,0 +1,11 @@
+build/*
+dist/*
+packages/**/build/*
+packages/**/dist/*
+# /node_modules/* and /bower_components/* should be ignored by default...
+node_modules/*
+./node_modules/**
+./node_modules/*
+**/node_modules/**
+**/node_modules
+packages/**/node_modules/*

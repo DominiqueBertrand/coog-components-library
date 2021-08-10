@@ -1,0 +1,46 @@
+// This file is part of Coog. The COPYRIGHT file at the top level of
+// this repository contains the full copyright notices and license terms.
+
+@import '../../../variables';
+@import '../../../typography';
+
+.group-7cb82dbf-66ff-4e7b-a93a-1a11159a4a87 {
+  @include font-defaults;
+
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
+  > .title {
+    color: $color-theme-1;
+    display: block;
+    padding: 6px 15px;
+    font-weight: 500;
+    background-color: rgba($color-theme-1, 0.03);
+    width: fit-content;
+    border-radius: 0 15px 0 0;
+  }
+
+  > .descrition {
+    color: $color-theme-1;
+    display: block;
+    padding: 6px 15px;
+    font-weight: 300;
+    background-color: rgba($color-theme-1, 0.03);
+    width: auto;
+    border-radius: 0 15px 0 0;
+  }
+
+  > .questions {
+    color: $color-theme-1;
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+  }
+
+  > .answer {
+    color: $color-theme-1;
+    font-weight: bold;
+  }
+}

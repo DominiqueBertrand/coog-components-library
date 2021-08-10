@@ -1,0 +1,45 @@
+// This file is part of Coog. The COPYRIGHT file at the top level of
+// this repository contains the full copyright notices and license terms.
+
+@import '../../../variables';
+@import '../../../typography';
+
+@mixin grid-card {
+  @include font-defaults;
+
+  flex: 1 0 49%;
+  padding: 15px;
+  border-bottom: 10px solid rgba($color-theme-1, 0.05);
+  margin: 0 2px 0 0;
+  background-color: rgba($color-theme-1, 0.03);
+  border-radius: 0 0 10px 0;
+
+  > .title {
+    display: block;
+    padding-bottom: 4px;
+    font-weight: 500;
+    border-radius: 0 15px 0 0;
+  }
+
+  > .grid-question {
+    > .question {
+      color: $color-theme-1;
+      margin: 0 5px 0 0;
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    > .answer {
+      color: $color-theme-1;
+      font-weight: bold;
+
+      p {
+        color: rgba($color-theme-1, 0.8);
+      }
+    }
+  }
+}
+
+.grid-card-6a9-064f417-50f4-00f8-4e7b {
+  @include grid-card;
+}

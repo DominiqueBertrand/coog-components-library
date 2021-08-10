@@ -1,0 +1,82 @@
+import  { Locales } from './CountryList.types';
+// import locales
+import dv from './langs/dv.json';
+import sw from './langs/sw.json';
+import eu from './langs/eu.json';
+import af from './langs/af.json';
+import am from './langs/am.json';
+import ha from './langs/ha.json';
+import ku from './langs/ku.json';
+import ml from './langs/ml.json';
+import no from './langs/no.json';
+import ps from './langs/ps.json';
+import sd from './langs/sd.json';
+import so from './langs/so.json';
+import sq from './langs/sq.json';
+import ta from './langs/ta.json';
+import tg from './langs/tg.json';
+import tt from './langs/tt.json';
+import ug from './langs/ug.json';
+import ur from './langs/ur.json';
+import vi from './langs/vi.json';
+import ar from './langs/ar.json';
+import az from './langs/az.json';
+import be from './langs/be.json';
+import bg from './langs/bg.json';
+import bn from './langs/bn.json';
+import bs from './langs/bs.json';
+import ca from './langs/ca.json';
+import cs from './langs/cs.json';
+import da from './langs/da.json';
+import de from './langs/de.json';
+import en from './langs/en.json';
+import es from './langs/es.json';
+import et from './langs/et.json';
+import fa from './langs/fa.json';
+import fi from './langs/fi.json';
+import fr from './langs/fr.json';
+import gl from './langs/gl.json';
+import el from './langs/el.json';
+import he from './langs/he.json';
+import hi from './langs/hi.json';
+import hr from './langs/hr.json';
+import hu from './langs/hu.json';
+import hy from './langs/hy.json';
+import id from './langs/id.json';
+import is from './langs/is.json';
+import it from './langs/it.json';
+import ja from './langs/ja.json';
+import ka from './langs/ka.json';
+import kk from './langs/kk.json';
+import km from './langs/km.json';
+import ko from './langs/ko.json';
+import ky from './langs/ky.json';
+import lt from './langs/lt.json';
+import lv from './langs/lv.json';
+import mk from './langs/mk.json';
+import mn from './langs/mn.json';
+import ms from './langs/ms.json';
+import nb from './langs/nb.json';
+import nl from './langs/nl.json';
+import nn from './langs/nn.json';
+import pl from './langs/pl.json';
+import pt from './langs/pt.json';
+import ro from './langs/ro.json';
+import ru from './langs/ru.json';
+import sk from './langs/sk.json';
+import sl from './langs/sl.json';
+import sr from './langs/sr.json';
+import sv from './langs/sv.json';
+import th from './langs/th.json';
+import tr from './langs/tr.json';
+import uk from './langs/uk.json';
+import uz from './langs/uz.json';
+import zh from './langs/zh.json';
+
+const localeCountries: Locales = { dv, sw, eu, af, am, ha, ku, ml, no, ps, sd, so, sq, ta, tg, tt, ug, 
+    ur, vi, ar, az, be, bg, bn, bs, ca, cs, da, de, el, en, es, et, fa, fi, fr, gl, he, hi, hr, hu, hy, 
+    id, is, it, ja, ka, kk, km, ko, ky, lt, lv, mk, mn, ms, nb, nl, nn, pl, pt, ro, ru, sk, sl, sr, sv, 
+    th, tr, uk, uz, zh
+};
+
+export { localeCountries };

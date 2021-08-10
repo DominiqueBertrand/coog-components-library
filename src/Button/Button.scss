@@ -1,0 +1,132 @@
+// This file is part of Coog. The COPYRIGHT file at the top level of
+// this repository contains the full copyright notices and license terms.
+
+@import '../variables';
+@import '../typography.scss';
+@import '../_md-variables.scss';
+
+$color-error: rgb(183, 28, 28);
+$color-error-hover: rgba($color-error, 0.1);
+$color-warning: rgb(255, 153, 0);
+$color-warning-hover: rgba($color-warning, 0.1);
+$color-default: rgb(71, 71, 71);
+$color-default-hover: rgba($color-default, 0.1);
+$color-primary: rgb(67, 169, 253);
+$color-primary-hover: rgba($color-primary, 0.1);
+$color-disabled: rgb(189, 189, 189);
+$color-spinner-button: rgb(3, 192, 100);
+//Color
+$blue: $color-theme-2;
+$red: $material-red-900;
+$purple: $material-purple-900;
+$green: $material-green-900;
+$orange: $material-orange-900;
+$yellow: $material-yellow-900;
+
+@mixin button-action($color, $bg-color, $border-color) {
+  min-width: 64px;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  border: 1px solid $border-color;
+  background-color: $bg-color;
+  border-radius: 3px;
+  color: $color;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02857em;
+  line-height: 1.75;
+  text-transform: uppercase;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+@mixin button-action-hover($bg-color) {
+  background-color: $bg-color;
+  text-decoration: none;
+}
+
+@mixin button {
+  .button-default {
+    @include button-action($color-default, white, lighten($color-default, 50%));
+
+    cursor: pointer;
+
+    &:hover {
+      @include button-action-hover($color-default-hover);
+    }
+  }
+
+  .button-error {
+    @include button-action($color-error, rgba(white, 0.1), lighten($color-error, 40%));
+
+    cursor: pointer;
+
+    &:hover {
+      @include button-action-hover($color-error-hover);
+    }
+  }
+
+  .button-warning {
+    @include button-action($color-warning, rgba(white, 0.1), lighten($color-warning, 30%));
+
+    cursor: pointer;
+
+    &:hover {
+      @include button-action-hover($color-warning-hover);
+    }
+  }
+
+  .button-primary {
+    @include button-action($color-primary, rgba(white, 0.1), lighten($color-primary, 20%));
+
+    cursor: pointer;
+
+    &:hover {
+      @include button-action-hover($color-primary-hover);
+    }
+  }
+
+  .button-disabled {
+    @include button-action(darken($color-disabled, 0%), lighten($color-disabled, 20%), lighten($color-disabled, 10%));
+
+    cursor: not-allowed;
+
+    &:hover {
+      @include button-action-hover(lighten($color-disabled, 20%));
+    }
+  }
+
+  .button-purple {
+    @include button-action(darken($purple, 0%), rgba(white, 0.1), lighten($purple, 20%));
+
+    cursor: pointer;
+
+    &:hover {
+      @include button-action-hover(lighten($purple, 60%));
+    }
+  }
+
+  .button-green {
+    @include button-action(darken($green, 0%), rgba(white, 0.1), lighten($green, 20%));
+
+    cursor: pointer;
+
+    &:hover {
+      @include button-action-hover(lighten($green, 60%));
+    }
+  }
+  .button-orange {
+    @include button-action(darken($orange, 0%), rgba(white, 0.1), lighten($orange, 20%));
+
+    cursor: pointer;
+
+    &:hover {
+      @include button-action-hover(lighten($orange, 50%));
+    }
+  }
+}
+
+.button-99889523-548b-411b-9a64-35296c3da632 {
+  @include button;
+}

@@ -1,0 +1,13 @@
+// This file is part of Coog. The COPYRIGHT file at the top level of
+// this repository contains the full copyright notices and license terms.
+
+@import '../variables';
+@import '../typography.scss';
+
+.markdown-43ab78b8-b743-46de-a95d-6ed371f5a938 {
+  @include font-defaults;
+
+  div p {
+    margin: 0;
+  }
+}

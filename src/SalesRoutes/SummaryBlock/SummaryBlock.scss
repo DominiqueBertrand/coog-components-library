@@ -1,0 +1,16 @@
+// This file is part of Coog. The COPYRIGHT file at the top level of
+// this repository contains the full copyright notices and license terms.
+
+@import '../../variables';
+@import '../../typography.scss';
+
+@mixin summary-block {
+  @include font-defaults;
+
+  display: flex;
+  // flex-flow: column wrap;
+}
+
+.summary-block-6a9-064f417-50f4-00f8-4e7b {
+  @include summary-block;
+}

@@ -1,0 +1,310 @@
+// This file is part of Coog. The COPYRIGHT file at the top level of
+// this repository contains the full copyright notices and license terms.
+@use "sass:color";
+
+@import '../_variables.scss';
+@import '../_typography.scss';
+@import '../_md-variables.scss';
+
+//Color
+$blue: $color-theme-2;
+$red: $material-red-900;
+$purple: $material-purple-900;
+$green: $material-green-900;
+$orange: $material-orange-900;
+$yellow: $material-yellow-900;
+$black: $material-blue-grey-900;
+$white: white;
+$grey: $material-grey-500;
+
+$titleTextColor: white; //The color of the title text
+$contentTextColor: $color-theme-2; //The color of the content text
+$primaryColor: $color-theme-2; //The primary color of the card (header, border, hover color)'
+$primary-invert: color.invert($primaryColor, $weight: 100%);
+$secondaryColor: $color-theme-2;
+$primary-invert: color.invert($secondaryColor, $weight: 100%);
+
+// spacing
+$contentPadding: 10px; //Padding for content, default 10px
+$cardSpacing: 10px; //Space between this card and others elements on the page, default 10px
+
+//The secondary color of the card (content)
+@mixin title($color, $bgcolor) {
+  background-color: $bgcolor;
+  border-radius: 5px 5px 0 0;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 60px;
+
+  > .markdown {
+    color: $color;
+    font-size: 1.3rem;
+
+    p {
+      color: $color;
+      font-size: 1.3rem;
+    }
+
+    p:last-child {
+      margin: 0;
+    }
+  }
+}
+@mixin content($color, $bgcolor) {
+  background-color: $bgcolor;
+  flex: 1;
+  font-size: 1.1rem;
+  padding: $contentPadding;
+  overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
+
+  > .markdown {
+    font-size: 1.1rem;
+    color: $color;
+
+    p {
+      color: $color;
+      font-size: 1.1rem;
+    }
+
+    p:last-child {
+      margin: 0;
+    }
+  }
+}
+@mixin actions($color, $bgcolor) {
+  background-color: $bgcolor;
+  min-height: 35px;
+  font-size: 1.1rem;
+  padding: $contentPadding;
+  width: 100%;
+  box-sizing: border-box;
+
+  > .markdown {
+    font-size: 1.1rem;
+    color: $color;
+
+    p {
+      color: $color;
+      font-size: 1.1rem;
+    }
+
+    p:last-child {
+      margin: 0;
+    }
+  }
+}
+
+@mixin sharedStyleFrontBack {
+  backface-visibility: hidden;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+}
+
+@mixin sharedStyleBoxSizing {
+  box-sizing: border-box;
+}
+
+@mixin cardHovered($color) {
+  border-color: color.scale($color, $lightness: 70%);
+}
+
+@mixin card($color, $titleTextColor: white, $border-color: $color, $contentTextColor: $color) {
+  @include font-defaults;
+  @include sharedStyleBoxSizing;
+  perspective: 1000px;
+  padding: 1rem;
+
+  .card-wrapper {
+    @include sharedStyleBoxSizing;
+    border: 1px solid;
+    border-radius: 5px 5px 10px 0;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    user-select: none;
+    width: 100%;
+    border-bottom: 10px solid rgba($color, 0.05);
+    border-color: color.scale($border-color, $lightness: 90%);
+
+    &:hover {
+      @include cardHovered($border-color);
+    }
+
+    .front {
+      @include sharedStyleFrontBack;
+      z-index: 2;
+
+      .title {
+        @include sharedStyleBoxSizing;
+        @include title($titleTextColor, $color);
+      }
+      // .title:before {
+      //   content: '';
+      //   position: absolute;
+      //   top: 0;
+      //   right: 0;
+      //   border-top: 20px solid white;
+      //   border-left: 20px solid $secondaryColor;
+      //   width: 0;
+      // }
+      .content {
+        @include sharedStyleBoxSizing;
+        @include content($contentTextColor, color.scale($color, $lightness: 98%));
+      }
+      .actions {
+        @include sharedStyleBoxSizing;
+        @include actions($contentTextColor, color.scale($color, $lightness: 98%));
+
+        > div {
+          display: grid;
+        }
+      }
+    }
+
+    .back {
+      @include sharedStyleFrontBack;
+      z-index: 2;
+
+      .title {
+        @include sharedStyleBoxSizing;
+        @include title($titleTextColor, $color);
+      }
+      .content {
+        @include sharedStyleBoxSizing;
+        @include content($contentTextColor, color.scale($color, $lightness: 98%));
+      }
+    }
+  }
+}
+
+@mixin card-solid($color, $titleTextColor: white, $border-color: $color, $contentTextColor: white) {
+  @include font-defaults;
+  @include sharedStyleBoxSizing;
+  perspective: 1000px;
+  padding: 1rem;
+
+  .card-wrapper {
+    @include sharedStyleBoxSizing;
+    border: 1px solid;
+    border-radius: 5px 5px 10px 0;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    user-select: none;
+    width: 100%;
+    border-bottom: 10px solid rgba($color, 0.05);
+    border-color: color.scale($border-color, $lightness: 90%);
+
+    &:hover {
+      @include cardHovered($border-color);
+    }
+
+    .front {
+      @include sharedStyleFrontBack;
+      z-index: 2;
+
+      .title {
+        @include sharedStyleBoxSizing;
+        @include title($titleTextColor, $color);
+      }
+      // .title:before {
+      //   content: '';
+      //   position: absolute;
+      //   top: 0;
+      //   right: 0;
+      //   border-top: 20px solid white;
+      //   border-left: 20px solid $secondaryColor;
+      //   width: 0;
+      // }
+      .content {
+        @include sharedStyleBoxSizing;
+        @include content($contentTextColor, color.scale($color, $lightness: 18%));
+      }
+      .actions {
+        @include sharedStyleBoxSizing;
+        @include content($contentTextColor, color.scale($color, $lightness: 18%));
+
+        > div {
+          display: grid;
+        }
+      }
+    }
+
+    .back {
+      @include sharedStyleFrontBack;
+      z-index: 2;
+
+      .title {
+        @include sharedStyleBoxSizing;
+        @include title($titleTextColor, $color);
+      }
+      .content {
+        @include sharedStyleBoxSizing;
+        @include content($contentTextColor, $color);
+      }
+    }
+  }
+}
+
+// default color = blue
+.card-100e8588-9faf-4d82-ae66-a516a9bbcede {
+  @include card($blue);
+
+  &.blue {
+    @include card($blue);
+  }
+  &.red {
+    @include card($red);
+  }
+  &.purple {
+    @include card($purple);
+  }
+  &.orange {
+    @include card($orange);
+  }
+  &.green {
+    @include card($green);
+  }
+  &.yellow {
+    @include card($yellow);
+  }
+  &.black {
+    @include card($black);
+  }
+  &.grey {
+    @include card($grey);
+  }
+  &.white {
+    @include card($white, $primaryColor, $primaryColor, $primaryColor);
+  }
+  &.blue-solid {
+    @include card-solid($blue);
+  }
+  &.red-solid {
+    @include card-solid($red);
+  }
+  &.yellow-solid {
+    @include card-solid($yellow);
+  }
+  &.purple-solid {
+    @include card-solid($purple);
+  }
+  &.orange-solid {
+    @include card-solid($orange);
+  }
+  &.green-solid {
+    @include card-solid($green);
+  }
+  &.black-solid {
+    @include card-solid($black);
+  }
+  &.grey-solid {
+    @include card-solid($grey);
+  }
+}
